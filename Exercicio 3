@@ -1,12 +1,3 @@
-
-package exerciciosbubblesort03;
-
-import java.util.Scanner;
-
-
-public class ExerciciosBubbleSort03{
-        
-        
 public static void main(String[] args) {
         int qtdAlunos;
         double mediaFinal[];
@@ -14,27 +5,26 @@ public static void main(String[] args) {
         System.out.println("Digite a quantidade de alunos: ");
         qtdAlunos = sc.nextInt();
         
-        int[] x;
+        double[] x;
         x = preencheVetor(qtdAlunos);
         System.out.println("Média de todos os alunos: " + imprimeVetor(x));
         
         x = bubble_sort_desc(x);
         System.out.println("Média dos alunos em ordem decrescente: " + imprimeVetor(x));
-       
     }
     
-    public static int[] preencheVetor(int qtdAlunos) {
-        int[] x = new int[qtdAlunos];
+    public static double[] preencheVetor(int qtdAlunos) {
+        double[] x = new double[qtdAlunos];
         Scanner sc;
         sc = new Scanner(System.in);
         for (int c = 0; c < qtdAlunos; c++) {
-            System.out.print("Informe a " + (c + 1) + " numero: ");
-            x[c] = sc.nextInt();
+            System.out.print("Informe a nota do " + (c + 1) + "º aluno: ");
+            x[c] = sc.nextDouble();
         }
         return x;
     }
 
-    public static String imprimeVetor(int[] x) {
+    public static String imprimeVetor(double[] x) {
         String vet = "";
         for (int c = 0; c < x.length; c++) {
             if (c == x.length - 1) {
@@ -46,8 +36,8 @@ public static void main(String[] args) {
         return vet;
     }
     
-    public static int[] bubble_sort_desc(int[] x) {
-        int aux = 0;
+    public static double[] bubble_sort_desc(double[] x) {
+        double aux = 0;
 
         for (int i = 1; i < x.length; i++) {
             for (int j = 0; j < x.length - 1; j++) {
@@ -60,4 +50,3 @@ public static void main(String[] args) {
         }        
         return x;
     }
-}
